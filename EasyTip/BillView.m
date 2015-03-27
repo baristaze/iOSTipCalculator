@@ -49,18 +49,18 @@
         
         // create labels
         CGFloat halfSize = (screenWidth - 2 * MARGIN_BIG - MARGIN_SMALL) / 2.0f;
-        CGRect descRect = CGRectMake(left, top, halfSize, LABEL_HEIGHT);
+        CGRect descRect = CGRectMake(left, top, halfSize-20, LABEL_HEIGHT);
         UILabel* _descriptionLabel = [[UILabel alloc] initWithFrame:descRect];
         _descriptionLabel.font = [UIFont systemFontOfSize:18];
         _descriptionLabel.numberOfLines = 1;
         _descriptionLabel.textAlignment = NSTextAlignmentCenter;
         _descriptionLabel.textColor = [UIColor whiteColor];
         _descriptionLabel.backgroundColor = [UIColor blackColor];
-        [_descriptionLabel setText:@"Enter Bill Amount: "];
+        [_descriptionLabel setText:@"Bill Amount: "];
         // add it to the subview
         [self addSubview:_descriptionLabel];
         
-        CGRect labelRect = CGRectMake(left + halfSize + MARGIN_SMALL, top, halfSize, LABEL_HEIGHT);
+        CGRect labelRect = CGRectMake(left + halfSize + MARGIN_SMALL - 20, top, halfSize + 20, LABEL_HEIGHT);
         _billAmountLabel = [[UILabel alloc] initWithFrame:labelRect];
         _billAmountLabel.font = [UIFont systemFontOfSize:30];
         _billAmountLabel.numberOfLines = 1;

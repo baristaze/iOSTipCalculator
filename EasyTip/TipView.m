@@ -11,8 +11,8 @@
 
 #define ROW_HEIGHT 60.0
 #define BUTTON_HEIGHT 60.0
-#define MARGIN_BIG 20.0
-#define MARGIN_SMALL 15.0
+#define MARGIN_BIG 10.0
+#define MARGIN_SMALL 10.0
 
 @interface TipView(private)
 
@@ -60,6 +60,8 @@
                           isLeft:FALSE
                            title:@"0 %"];
         //                   title:rateAsText];
+        
+        [_tipRateLabel setTextColor:[UIColor redColor]];
 
         
         [self createLabelWithRow:2
@@ -77,6 +79,8 @@
          _totalLabel = [self createLabelWithRow:3
                            isLeft:FALSE
                              title:[TipCalculator decimalAsCurrency:[_tipCalculator getGrandTotal]]];
+        
+        [_totalLabel setTextColor:[UIColor yellowColor]];
         
         // add slider
         [self createSlider];
@@ -139,7 +143,7 @@
     
     // calculate location
     CGFloat left = MARGIN_BIG;
-    CGFloat top = statusBarHeight + MARGIN_BIG + (4 * (MARGIN_SMALL + ROW_HEIGHT)) + MARGIN_BIG;
+    CGFloat top = statusBarHeight + MARGIN_BIG + (4 * (MARGIN_SMALL + ROW_HEIGHT));
     CGRect rect = CGRectMake(left, top, screenWidth - (2 * MARGIN_BIG), ROW_HEIGHT);
     _tipSlider = [[UISlider alloc] initWithFrame:rect];
     
